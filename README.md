@@ -23,17 +23,17 @@ Installation procedure:
 3. Restart Arduino IDE
 
 
-
-Contributors
-------------
-
-ChrisMicro
-Microbuilder.eu
-Arduino team
-Bob Cousins
-
 Licenses
 --------
 
 OpenLasp is an Open Source project. Source files are generally GPL or BSD, please see individual files
 for Copyright notices.
+
+Contributors
+------------
+
+- ChrisMicro
+- Microbuilder.eu
+- Arduino team
+- Bob Cousins
+
