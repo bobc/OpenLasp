@@ -14,7 +14,8 @@ Installing
 Pre-requisites:
 
 - Arduino IDE version 1.5.7 or later
-- Python is required for the LPC upload utility.
+- Python (for the LPC upload utility)
+- pyserial library
 
 Installation procedure:
 
@@ -29,11 +30,13 @@ Licenses
 OpenLasp is an Open Source project. Source files are generally GPL or BSD, please see individual files
 for Copyright notices.
 
-Contributors
-------------
+Main Contributors
+-----------------
 
 - ChrisMicro
-- Microbuilder.eu
+- K. Townsend (microBuilder.eu)
 - Arduino team
+- ARM Limited
+- Kamal Mostafa
 - Bob Cousins
 
