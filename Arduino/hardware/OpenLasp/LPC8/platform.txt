@@ -88,5 +88,5 @@ tools.lpc_upload.path={runtime.hardware.path}/tools
 
 tools.lpc_upload.upload.params.verbose=-d
 tools.lpc_upload.upload.params.quiet=
-tools.lpc_upload.upload.pattern="{path}/{cmd}" {serial.port.file} "{build.path}/{build.project_name}.bin"
+tools.lpc_upload.upload.pattern="{path}/{cmd}" "{path}" {serial.port.file} "{build.path}/{build.project_name}.bin"
 

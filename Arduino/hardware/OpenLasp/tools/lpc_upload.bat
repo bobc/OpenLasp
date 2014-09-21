@@ -1,10 +1,14 @@
 @echo off
 rem
-rem
+rem Call python program to download bin file to LPC810
 rem
 
-echo %1 %2 %3 %4 %5 %6 %7 %8 %9
-
+set zzzpath=%1
 rem port file.bin
-python flushmagic.py %1 %2
+python %zzzpath%\flushmagic.py %2 %3
+
+set zzzpath=
+
+
+
 
