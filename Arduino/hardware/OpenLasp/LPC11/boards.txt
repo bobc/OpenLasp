@@ -1,0 +1,18 @@
+
+lpc1114_bare.name=NXP LPC1114 FN28/FDH28 Bare
+#
+lpc1114_bare.upload.tool=lpc_upload
+lpc1114_bare.upload.protocol=lpc
+lpc1114_bare.upload.maximum_size=32768
+lpc1114_bare.upload.use_1200bps_touch=false
+lpc1114_bare.upload.wait_for_upload_port=true
+#
+lpc1114_bare.build.mcu=cortex-m0
+lpc1114_bare.build.f_cpu=50000000L
+lpc1114_bare.build.board=NXP_LPC1114_28
+lpc1114_bare.build.core=lpc1100
+lpc1114_bare.build.extra_flags=-D__LPC1114__ -mthumb
+lpc1114_bare.build.ldscript=linker_scripts/gcc/linkscript.ld
+lpc1114_bare.build.variant=lpc1114_bare_28
+lpc1114_bare.build.variant_system_lib=libsys_lpc1114_gcc_rel.a
+

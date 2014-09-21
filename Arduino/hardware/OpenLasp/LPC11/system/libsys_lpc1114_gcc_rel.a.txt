@@ -1,0 +1,239 @@
+
+LPC11xx_handlers.o:
+00000000 W ADC_IRQHandler
+00000000 W BOD_IRQHandler
+         U boot_entry
+00000000 W BusFault_Handler
+00000000 W CAN_IRQHandler
+00000000 W DebugMon_Handler
+00000000 T fault_undefined
+00000000 W FMC_IRQHandler
+00000000 W HardFault_Handler
+00000000 W I2C_IRQHandler
+00000000 T irq_undefined
+00000000 W MemManage_Handler
+00000000 W NMI_Handler
+00000000 W PendSV_Handler
+00000000 W PIOINT0_IRQHandler
+00000000 W PIOINT1_IRQHandler
+00000000 W PIOINT2_IRQHandler
+00000000 W PIOINT3_IRQHandler
+00000000 W SSP0_IRQHandler
+00000000 W SSP1_IRQHandler
+         U stack_entry
+00000000 W SVCall_Handler
+00000000 W SysTick_Handler
+00000000 W TIMER16_0_IRQHandler
+00000000 W TIMER16_1_IRQHandler
+00000000 W TIMER32_0_IRQHandler
+00000000 W TIMER32_1_IRQHandler
+00000000 W UART_IRQHandler
+00000000 W UsageFault_Handler
+00000000 W USB_FIQHandler
+00000000 W USB_IRQHandler
+00000000 D vectors
+00000000 W WAKEUP_IRQHandler
+00000000 W WDT_IRQHandler
+
+LPC1xxx_startup.o:
+         U _bss
+         U _data
+         U _ebss
+         U _edata
+         U _etext
+00000000 T boot_entry
+         U main
+
+adc.o:
+         U __aeabi_uidiv
+         U __gnu_thumb1_case_uqi
+00000000 b _adcInitialised
+00000000 b _adcLastChannel
+00000000 T adcInit
+00000000 T adcRead
+00000000 T adcReadSingle
+
+cpu.o:
+00000000 T cpuGetDeviceID
+00000000 T cpuInit
+00000000 T cpuPllSetup
+00000000 T cpuReset
+         U gpioInit
+
+gpio.o:
+         U __gnu_thumb1_case_uqi
+00000000 b _gpioInitialised
+00000000 r CSWTCH.26
+00000000 r CSWTCH.30
+00000000 r CSWTCH.31
+00000000 r CSWTCH.32
+00000000 T gpioDisableInternalResistors
+00000000 T gpioGetValue
+00000000 T gpioInit
+00000000 T gpioIntClear
+00000000 T gpioIntDisable
+00000000 T gpioIntEnable
+00000000 T gpioIntStatus
+00000000 T gpioSetDir
+00000000 T gpioSetInterrupt
+00000000 T gpioSetPullup
+00000000 T gpioSetValue
+         U memcpy
+
+i2c.o:
+00000004 C _I2cMode
+00000000 T I2C_IRQHandler
+00000000 T i2cEngine
+00000000 T i2cInit
+00000040 C I2CMasterBuffer
+00000000 B I2CMasterState
+00000004 C I2CReadLength
+00000040 C I2CSlaveBuffer
+00000000 B I2CSlaveState
+00000004 C I2CWriteLength
+00000004 C RdIndex
+00000004 C WrIndex
+
+iap.o:
+00000000 T iap_entry
+00000014 C iap_return
+00000000 T iapReadSerialNumber
+00000014 C param_table
+
+pmu.o:
+00000000 b command
+         U cpuPllSetup
+         U gpioSetPullup
+00000000 T pmuDeepSleep
+00000000 T pmuInit
+00000000 T pmuPowerDown
+00000000 T pmuRestoreHW
+00000000 T pmuSetupHW
+00000000 T pmuSleep
+00000000 b result
+00000000 D rom
+00000000 T WAKEUP_IRQHandler
+
+pwm.o:
+         U __aeabi_uidiv
+00000000 D pwmDutyCycle
+00000000 T pwmInit
+00000000 B pwmMaxPulses
+00000000 D pwmPulseWidth
+00000000 T pwmSetDutyCycle
+00000000 T pwmSetFrequencyInMicroseconds
+00000000 T pwmSetFrequencyInTicks
+00000000 T pwmStart
+00000000 T pwmStartFixed
+00000000 T pwmStop
+
+ssp.o:
+         U gpioInit
+         U gpioSetDir
+         U gpioSetPullup
+         U gpioSetValue
+00000000 B interruptOverRunStat
+00000000 B interruptRxStat
+00000000 B interruptRxTimeoutStat
+00000000 T SSP0_IRQHandler
+00000000 T SSP1_IRQHandler
+00000000 T sspInit
+00000000 T sspReceive
+00000000 T sspSend
+
+stdio.o:
+         U __aeabi_uidiv
+         U __aeabi_uidivmod
+00000000 T append_char
+00000000 T iprintf
+         U memcpy
+00000000 T PutHexa
+         U puts
+00000000 T PutSignedInt
+00000000 T PutString
+00000000 T PutUnsignedInt
+00000000 T snprintf
+00000000 T sprintf
+00000000 T vprintf
+00000000 T vsnprintf
+00000000 T vsprintf
+
+string.o:
+00000000 b last.4294
+00000000 T memcpy
+00000000 T memmove
+00000000 T memset
+00000000 T strchr
+00000000 T strcmp
+00000000 T strcpy
+00000000 T strlen
+00000000 T strncmp
+00000000 T strncpy
+00000000 T strrchr
+00000000 T strtok
+00000000 T strtok_r
+
+systick.o:
+         U __aeabi_uidiv
+00000000 T SysTick_Handler
+00000000 T systickDelay
+00000000 T systickGetRollovers
+00000000 T systickGetSecondsActive
+00000000 T systickGetTicks
+00000000 T systickInit
+00000000 B systickRollovers
+00000000 B systickTicks
+
+timer16.o:
+         U __aeabi_uidiv
+00000000 B pwmCounter
+         U pwmMaxPulses
+00000000 B timer16_0_counter
+00000000 T TIMER16_0_IRQHandler
+00000000 B timer16_1_counter
+00000000 T TIMER16_1_IRQHandler
+00000000 T timer16DelayTicks
+00000000 T timer16DelayUS
+00000000 T timer16Disable
+00000000 T timer16Enable
+00000000 T timer16Init
+00000000 T timer16Reset
+
+timer32.o:
+         U __aeabi_uidiv
+00000000 B timer32_0_counter
+00000000 T TIMER32_0_IRQHandler
+00000000 B timer32_1_counter
+00000000 T TIMER32_1_IRQHandler
+00000000 T timer32Delay
+00000000 T timer32Disable
+00000000 T timer32Enable
+00000000 T timer32Init
+00000000 T timer32Reset
+
+uart.o:
+         U __aeabi_uidiv
+         U memset
+00000000 b pcb
+00000000 T UART_IRQHandler
+00000000 T uartGetPCB
+00000000 T uartInit
+         U uartRxBufferInit
+         U uartRxBufferWrite
+00000000 T uartSend
+00000000 T uartSendByte
+
+uart_buf.o:
+         U uartGetPCB
+00000000 T uartRxBufferClearFIFO
+00000000 T uartRxBufferDataPending
+00000000 T uartRxBufferInit
+00000000 T uartRxBufferRead
+00000000 T uartRxBufferReadArray
+00000000 T uartRxBufferWrite
+
+wdt.o:
+00000004 C wdt_counter
+00000000 T WDT_IRQHandler
+00000000 T wdtFeed
+00000000 T wdtInit
