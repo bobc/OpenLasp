@@ -8,6 +8,15 @@
 //
 
 
+
+
+#pragma warning (ChrisMicro: __USE_CMSIS dirty hack should be defined in make file)
+#define __USE_CMSIS
+
+
+
+
+
 #if defined (__USE_CMSIS)
 #include "LPC8xx.h"
 #endif

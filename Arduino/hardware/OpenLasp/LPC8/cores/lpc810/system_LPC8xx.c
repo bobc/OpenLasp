@@ -124,11 +124,12 @@ void SystemCoreClockUpdate (void)            /* Get Core Clock Frequency      */
  * @brief  Setup the microcontroller system.
  *         Initialize the System.
  */
+
 void SystemInit (void) {
   /* System clock to the IOCON & the SWM need to be enabled or
   most of the I/O related peripherals won't work. */
   LPC_SYSCON->SYSAHBCLKCTRL |= ( (0x1 << 7) | (0x1 << 18) );
-	
+
 #if (CLOCK_SETUP)                                 /* Clock Setup              */
 
 #if ((SYSPLLCLKSEL_Val & 0x03) == 1)
