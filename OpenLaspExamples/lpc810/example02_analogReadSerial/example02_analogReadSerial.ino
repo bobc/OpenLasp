@@ -16,6 +16,7 @@ void loop() {
   int sensorValue = analogRead(A1);
   Serial_printnumber(sensorValue);
   Serial_println("");
+  delay(500);
 }
 
 
