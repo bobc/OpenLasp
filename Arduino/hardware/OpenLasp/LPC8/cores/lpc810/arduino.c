@@ -126,6 +126,7 @@ uint16_t analogRead(uint8_t channel )
 
 	return 	read_adc(channel);
 }
+// value 0..255
 void analogWrite(uint8_t analogOutPin, uint16_t value)
 {
 	static uint8_t initFlags=0;
@@ -135,7 +136,7 @@ void analogWrite(uint8_t analogOutPin, uint16_t value)
 		init_sct(analogOutPin);
 		initFlags|=1<<analogOutPin;
 	}
-	setPwm(analogOutPin,value);
+	setPwm(analogOutPin,value*4); // scale value to 1023 for Arduino Uno compatibility
 }
 /******************************************************************************
 

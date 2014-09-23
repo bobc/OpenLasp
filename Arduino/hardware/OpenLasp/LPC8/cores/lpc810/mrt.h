@@ -28,6 +28,7 @@ void mrtInit(uint32_t delay);
 void mrtDelay(uint32_t ticks);
 uint32_t millis();
 uint32_t micros();
+void delayMicroseconds(uint32_t us);
 
 #endif
 /***************************************************************************

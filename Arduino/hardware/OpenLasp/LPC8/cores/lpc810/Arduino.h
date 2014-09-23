@@ -18,6 +18,7 @@
 #include "uart.h"
 #include "adc.h"
 #include "sct.h"
+#include "tone.h"
 
 
 #define INPUT 	0
