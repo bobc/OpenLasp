@@ -175,6 +175,8 @@ crt0(void)
 	*(dest++) = 0;
 }
 
+int main(void); // main declaration to avoid -c99 compiler warning message, Sep.2014 ChrisMicro
+
 __attribute__ ((section(".after_vectors")))
 void
 ResetISR(void)

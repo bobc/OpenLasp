@@ -27,6 +27,7 @@
 #define halt_clk(c) LPC_MRT->Channel[3].INTVAL = (c-3)
 
 volatile uint32_t mrt_counter = 0;
+uint32_t Factor_us;
 
 void MRT_IRQHandler(void)
 {
@@ -40,6 +41,7 @@ void MRT_IRQHandler(void)
 
 void mrtInit(uint32_t delay)
 {
+  Factor_us=__SYSTEM_CLOCK/1000000UL;
   /* Enable clock to MRT and reset the MRT peripheral */
   LPC_SYSCON->SYSAHBCLKCTRL |=  (0x1<<10);
   LPC_SYSCON->PRESETCTRL    &= ~(0x1<<7);
@@ -50,6 +52,9 @@ void mrtInit(uint32_t delay)
   LPC_MRT->Channel[0].INTVAL |= 0x1UL<<31;
 
   LPC_MRT->Channel[0].CTRL = MRT_REPEATED_MODE|MRT_INT_ENA;
+
+  // timer 1 for us delay with down counter
+  LPC_MRT->Channel[1].CTRL = MRT_ONE_SHOT_INT;
 
   /* Enable the MRT Interrupt */
 #if NMI_ENABLED
@@ -79,9 +84,15 @@ uint32_t micros()
 	return mrt_counter*1000; // tbd: change timer resolution
 }
 
-inline void delayMicroseconds(uint32_t us)
+void delayMicroseconds(uint32_t us)
 {
+#ifdef BUS_STALL
+	// buss stall mode is more accurate but blocking all activity
 	halt_clk(us*30); // us delay for 30MHz clk
+#else
+  LPC_MRT->Channel[1].INTVAL = Factor_us*us; // should be one us
+  while(LPC_MRT->Channel[1].STAT&0x2); // wait for timer stop flag
+#endif
 }
 /******************************************************************************
  *
