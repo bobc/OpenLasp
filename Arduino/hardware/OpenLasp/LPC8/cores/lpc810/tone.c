@@ -9,7 +9,7 @@
 
 */
 /**************************************************************************/
-#include "arduino.h"
+#include "Arduino.h"
 #include "tone.h"
 #include "mrt.h"
 

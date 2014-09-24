@@ -7,7 +7,6 @@
 // - Note: empty boilerplate ISR routines from cr_startup_lpc8xx.c
 //
 
-
 #if defined (__USE_CMSIS)
 #include "LPC8xx.h"
 #endif
