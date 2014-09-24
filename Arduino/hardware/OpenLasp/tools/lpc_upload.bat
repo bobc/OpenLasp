@@ -1,13 +1,13 @@
 @echo off
 rem
-rem Call python program to download bin file to LPC810
+rem Call lpc21isp program to download bin file to LPC810
 rem
+rem parameters are: path port file.bin
 
-set zzzpath=%1
-rem port file.bin
-python %zzzpath%\flushmagic.py %2 %3
+rem Note: %~dp0 get path of this batch file, so path parameter is no longer required
 
-set zzzpath=
+%~dp0lpc21isp.exe -bin "%3" %2 115200 12000
+
 
 
 
